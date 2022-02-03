@@ -1,4 +1,5 @@
 import streamlit as st
+st.text_input("Your Name", key="name")
 
-X = st.slider('x')  # It's a widget
-st.write('Slider Value =', X, 'Squared Value = ', X * X)
+# You can access the value at any point with:
+st.session_state.name
