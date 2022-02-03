@@ -1,10 +1,10 @@
 import streamlit as st
-import numpy as np
 import pandas as pd
 
-if st.checkbox('Show Dataframe'):
-    chart_data = pd.DataFrame(np.random.randn(20, 3),
-                                    columns=['a', 'b', 'c'])
-    chart_data
+df = pd.DataFrame({'First Column': [1, 2, 3, 4],
+                    'Second Column': [10, 20, 30, 40] })
 
+option = st.selectbox('Number You Like Best', df['first column'])
+
+'Your Selection: ', option
 
