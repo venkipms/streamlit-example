@@ -1,11 +1,16 @@
 import streamlit as st
+import time
 
-left_column, right_column = st.columns(2)
-# You can use a column just like st.sidebar:
-left_column.button('SUBMIT')
+'Starting Long Computation...'
 
-# Or even better, call Streamlit functions inside a "with" block:
-with right_column:
-    chosen = st.radio('Programming Language',
-        ("Python", "Java", "Kotlin", "Scala"))
-    st.write(f"Language {chosen} Selected")
+# Add a placeholder
+latest_iteration = st.empty()
+bar = st.progress(0)
+
+for i in range(100):
+  # Update the progress bar with each iteration.
+  latest_iteration.text(f'Iteration {i+1}')
+  bar.progress(i + 1)
+  time.sleep(0.1)
+
+'...and now we\'re done!'
