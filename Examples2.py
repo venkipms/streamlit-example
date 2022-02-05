@@ -22,3 +22,21 @@ with right_column:
     chosen = st.radio('Programming Language',
         ("Python", "Java", "Kotlin", "Scala"))
     st.write(f"Language {chosen} Selected")
+
+# Example 3
+import streamlit as st
+import time
+
+'Starting Long Computation...'
+
+# Add a placeholder
+latest_iteration = st.empty()
+bar = st.progress(0)
+
+for i in range(100):
+  # Update the progress bar with each iteration.
+  latest_iteration.text(f'Iteration {i+1}')
+  bar.progress(i + 1)
+  time.sleep(0.2)
+
+'Hurray! Completed !!'
