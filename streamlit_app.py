@@ -1,16 +1,20 @@
 import streamlit as st
-import time
+import pandas as pd
+import numpy as np
 
-'Starting Long Computation...'
+st.title('Uber pickups in NYC')
 
-# Add a placeholder
-latest_iteration = st.empty()
-bar = st.progress(0)
+DATE_COLUMN = 'date/time'
+DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
+            'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
 
-for i in range(100):
-  # Update the progress bar with each iteration.
-  latest_iteration.text(f'Iteration {i+1}')
-  bar.progress(i + 1)
-  time.sleep(0.2)
-
-'Hurray! Completed !!'
+def load_data(nrows):
+    data = pd.read_csv(DATA_URL, nrows=nrows)
+    lowercase = lambda x: str(x).lower()
+    data.rename(lowercase, axis='columns', inplace=True)
+    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
+    return data
+ 
+data_load_state = st.text('Loading data...')
+data = load_data(10000)
+data_load_state.text("Done! Data Loading")
