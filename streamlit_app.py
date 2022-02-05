@@ -6,7 +6,6 @@ left_column.button('SUBMIT')
 
 # Or even better, call Streamlit functions inside a "with" block:
 with right_column:
-    chosen = st.radio(
-        'Sorting hat',
-        ("Gryffindor", "Ravenclaw", "Hufflepuff", "Slytherin"))
-    st.write(f"You are in {chosen} house!")
+    chosen = st.radio('Programming Language',
+        ("Python", "Java", "Kotlin", "Scala"))
+    st.write(f"Language {chosen} Selected")
