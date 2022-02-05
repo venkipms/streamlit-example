@@ -2,12 +2,13 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.title('Uber pickups in NYC')
+st.title('Uber Pickups in NYC')
 
 DATE_COLUMN = 'date/time'
 DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
             'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
 
+@st.cache
 def load_data(nrows):
     data = pd.read_csv(DATA_URL, nrows=nrows)
     lowercase = lambda x: str(x).lower()
@@ -19,6 +20,6 @@ data_load_state = st.text('Loading data...')
 data = load_data(10000)
 data_load_state.text("Done! Data Loading")
 
-if st.checkbox('Show raw data'):
-    st.subheader('Raw data')
+if st.checkbox('Show Raw Data'):
+    st.subheader('Raw Data')
     st.write(data)
