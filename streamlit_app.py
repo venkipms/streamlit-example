@@ -7,7 +7,7 @@ from streamlit.components.v1 import iframe
 st.set_page_config(layout="centered", page_icon="🎓", page_title = "Certificate Generator")
 st.title("🎓 Certificate Generator")
 
-st.write("The APP facilitates to create PDF based on the user input")
+st.header("It creates PDF based on the Input")
 
 left, right = st.columns(2)
 
