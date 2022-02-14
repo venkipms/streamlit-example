@@ -1,36 +1,41 @@
+import pdfkit
+from jinja2 import Environment, PackageLoader, select_autoescape, FileSystemLoader
+from datetime import date
 import streamlit as st
-import pandas as pd
-import numpy as np
+from streamlit.components.v1 import iframe
 
-st.title('Uber Pickups in NYC')
+st.set_page_config(layout="centered", page_icon="🎓", page_title = "Certificate Generator")
+st.title("🎓 Certificate Generator")
 
-DATE_COLUMN = 'date/time'
-DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
-            'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+st.write("The APP facilitates to create PDF based on the user input")
 
-@st.cache
-def load_data(nrows):
-    data = pd.read_csv(DATA_URL, nrows=nrows)
-    lowercase = lambda x: str(x).lower()
-    data.rename(lowercase, axis='columns', inplace=True)
-    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
-    return data
- 
-data_load_state = st.text('Loading data...')
-data = load_data(10000)
-data_load_state.text("Done! Data Loading")
+left, right = st.columns(2)
 
-if st.checkbox('Show Raw Data'):
-    st.subheader('Raw Data')
-    st.write(data)
+right.write(" Template Used")
 
-st.subheader('Number of Pickups by Hour')
-hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
-st.bar_chart(hist_values)
+right.image("template.png",width=300)
 
-# Some number in the range 0-23
-hour_to_filter = st.slider('hour', 0, 23, 17)
-filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
+env = Environment(loader=FileSystemLoader("."), autoescape = select_autoescape())
+template = env.get_template("template.html")
 
-st.subheader('Map of all pickups at %s:00' % hour_to_filter)
-st.map(filtered_data)
+left.write("Fill Required Data")
+form = left.form("Template_Form")
+student = form.text_input("Student Name")
+course = form.selectbox("Choose Course", ["Python", "Java", "Big Data", "Deep Learning"], index=0,)
+grade = form.slider("Grade", 1, 100, 60)
+submit = form.form_submit_button("Generate PDF")
+
+if submit:
+    html = template.render(student=student, course=course, grade=f"{grade}/100", date=date.today().strftime("%B %d,%Y"),)
+    
+    pdf = pdfkit.from_string(html, False)
+    st.balloons()
+    
+    right.success("🎉 Generated Successfully!!")
+   
+    right.download_button(
+        "⬇️ Download PDF",
+        data=pdf,
+        file_name="Degree.pdf",
+        mime="application/octet-stream",
+    )      
