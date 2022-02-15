@@ -20,7 +20,7 @@ template = env.get_template("template.html")
 
 left.write("Fill Required Data")
 form = left.form("Template_Form")
-student = form.text_input("**Student Name**")
+student = form.text_input(st.markdown("**Student Name**"))
 course = form.selectbox("Choose Course", ["Python", "Java", "Big Data", "Deep Learning"], index=0,)
 grade = form.slider("Grade", 1, 100, 60)
 submit = form.form_submit_button("Generate PDF")
