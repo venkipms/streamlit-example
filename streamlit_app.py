@@ -11,7 +11,7 @@ st.subheader("It creates PDF based on the Input")
 
 left, right = st.columns(2)
 
-right.write(" Template Used")
+right.markdown("** Template Used **")
 
 right.image("template.png",width=300)
 
