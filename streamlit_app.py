@@ -19,7 +19,7 @@ left, right = st.columns(2)
 
 right.markdown("**Template Used**")
 
-right.image("template.png",width=300)
+right.image("template.png",width=400)
 
 env = Environment(loader=FileSystemLoader("."), autoescape = select_autoescape())
 template = env.get_template("template.html")
