@@ -1,3 +1,5 @@
+# https://raw.githubusercontent.com/omnidan/node-emoji/master/lib/emoji.json
+
 import pdfkit
 from jinja2 import Environment, PackageLoader, select_autoescape, FileSystemLoader
 from datetime import date
