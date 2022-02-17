@@ -13,7 +13,7 @@ col1.image("vit_3.png", use_column_width='auto')
 
 col2.title("🏫 Certificate Generator")
 
-st.subheader("It creates PDF based on the Input")
+st.subheader("It generates certificate in PDF based on the Input")
 
 left, right = st.columns(2)
 
