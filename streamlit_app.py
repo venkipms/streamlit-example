@@ -4,9 +4,9 @@ from datetime import date
 import streamlit as st
 from streamlit.components.v1 import iframe
 
-st.set_page_config(layout="centered", page_icon="vit_3.png", page_title = "Certificate Generator")
+st.set_page_config(layout="centered", page_icon="🎓", page_title = "Certificate Generator")
 st.image("vit_3.png", width=100)
-st.title("vit_3.png" + "🎓 Certificate Generator")
+st.title("🎓 Certificate Generator")
 
 st.subheader("It creates PDF based on the Input")
 
