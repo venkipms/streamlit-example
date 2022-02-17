@@ -38,7 +38,7 @@ if submit:
     right.success("🎉 Generated Successfully!!")
    
     right.download_button(
-        "⬇️ Download PDF",
+        "⬇️ Download Certificate",
         data=pdf,
         file_name= student + ".pdf",
         mime="application/octet-stream",
