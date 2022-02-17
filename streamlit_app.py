@@ -9,7 +9,7 @@ col1, col2 = st.columns(2)
 
 col1.image("vit_3.png", width=100)
 
-col2.title("🎓 Certificate Generator")
+col2.title("🎓 Certificate Generator", use_column_width= true)
 
 #st.image("vit_3.png", width=100)
 # st.title("🎓 Certificate Generator")
