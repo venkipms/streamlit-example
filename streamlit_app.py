@@ -36,6 +36,6 @@ if submit:
     right.download_button(
         "⬇️ Download PDF",
         data=pdf,
-        file_name="Degree.pdf",
+        file_name= student + ".pdf",
         mime="application/octet-stream",
     )      
