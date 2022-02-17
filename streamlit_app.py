@@ -11,9 +11,9 @@ col1, col2 = st.columns((1,4))
 
 col1.image("vit_3.png", use_column_width='auto')
 
-col2.title("🏫 Certificate Generator")
+col2.title("Certificate Generator")
 
-st.subheader("It generates certificate in PDF based on the Input")
+st.subheader("It generates 🎓 certificate in PDF based on the Input")
 
 left, right = st.columns(2)
 
@@ -29,7 +29,7 @@ form = left.form("Template_Form")
 student = form.text_input("Student Name")
 course = form.selectbox("Choose Course", ["Python", "Java", "Big Data", "Deep Learning"], index=0,)
 grade = form.slider("Grade", 1, 100, 50)
-submit = form.form_submit_button("Generate Certificate")
+submit = form.form_submit_button(" 🎓 Generate Certificate")
 
 if submit:
     html = template.render(student=student, course=course, grade=f"{grade}/100", date=date.today().strftime("%B %d,%Y"),)
