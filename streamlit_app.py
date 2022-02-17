@@ -11,9 +11,6 @@ col1.image("vit_3.png", use_column_width='auto')
 
 col2.title("🎓 Certificate Generator")
 
-#st.image("vit_3.png", width=100)
-# st.title("🎓 Certificate Generator")
-
 st.subheader("It creates PDF based on the Input")
 
 left, right = st.columns(2)
@@ -29,8 +26,8 @@ left.markdown("**Fill Required Data**")
 form = left.form("Template_Form")
 student = form.text_input("Student Name")
 course = form.selectbox("Choose Course", ["Python", "Java", "Big Data", "Deep Learning"], index=0,)
-grade = form.slider("Grade", 1, 100, 60)
-submit = form.form_submit_button("Generate PDF")
+grade = form.slider("Grade", 1, 100, 50)
+submit = form.form_submit_button("Generate Certificate")
 
 if submit:
     html = template.render(student=student, course=course, grade=f"{grade}/100", date=date.today().strftime("%B %d,%Y"),)
