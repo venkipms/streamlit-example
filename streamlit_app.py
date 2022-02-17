@@ -6,7 +6,7 @@ from streamlit.components.v1 import iframe
 
 st.set_page_config(layout="centered", page_icon="vit_3.png", page_title = "Certificate Generator")
 st.image("vit_3.png", width=100)
-st.title("🎓 Certificate Generator")
+st.title("vit_3.png" + "🎓 Certificate Generator")
 
 st.subheader("It creates PDF based on the Input")
 
