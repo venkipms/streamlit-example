@@ -9,7 +9,7 @@ col1, col2 = st.columns((1,4))
 
 col1.image("vit_3.png", use_column_width='auto')
 
-col2.title("🎓 Certificate Generator")
+col2.title("🏫 Certificate Generator")
 
 st.subheader("It creates PDF based on the Input")
 
