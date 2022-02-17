@@ -5,7 +5,7 @@ import streamlit as st
 from streamlit.components.v1 import iframe
 
 st.set_page_config(layout="centered", page_icon="🎓", page_title = "Certificate Generator")
-col1, col2 = st.columns((1,2))
+col1, col2 = st.columns((1,3))
 
 col1.image("vit_3.png", width=100)
 
