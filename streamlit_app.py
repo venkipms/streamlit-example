@@ -5,11 +5,11 @@ import streamlit as st
 from streamlit.components.v1 import iframe
 
 st.set_page_config(layout="centered", page_icon="🎓", page_title = "Certificate Generator")
-col1, col2 = st.columns(2)
+col1, col2 = st.beta_columns((1,2))
 
 col1.image("vit_3.png", width=100)
 
-col2.title("🎓 Certificate Generator", use_column_width= True)
+col2.title("🎓 Certificate Generator")
 
 #st.image("vit_3.png", width=100)
 # st.title("🎓 Certificate Generator")
