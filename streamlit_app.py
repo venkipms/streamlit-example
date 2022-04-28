@@ -6,14 +6,13 @@ from datetime import date
 import streamlit as st
 from streamlit.components.v1 import iframe
 
-# st.set_page_config(layout="centered", page_icon="🎓", page_title = "Certificate Generator")
 col1, col2 = st.columns((1,6))
 
 col1.image("vit_3.png", use_column_width='auto')
 
-col2.title("Confirmation Order Generator")
+col2.title("HR - Order Generator")
 
-st.subheader("It generates 🎓 certificate in PDF based on the Input")
+st.subheader("Generates Faculty & Staff Probation/Confirmation Order")
 
 left, right = st.columns(2)
 
