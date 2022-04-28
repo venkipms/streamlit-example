@@ -28,7 +28,7 @@ form = left.form("Employee_Form")
 emp_ID = form.text_input("Employee ID")
 salutation = form.selectbox("Salutation", ["Dr.", "Mr.", "Ms.", "Mrs."], index=0,)
 emp_Name = form.text_input("Employee Name")
-school = form.text_input("School")
+school = form.selectbox("School", ["SAS", "SITE", "V-SIGN", "SSL", "SENSE", "SCE", "SBST", "VAIAL","VITBS", "SCOPE", "V-SPARC", "SMEC", "SELECT","SCHEME","HOT"], index=0,)
 submit = form.form_submit_button(" Generate Order")
 
 if submit:
