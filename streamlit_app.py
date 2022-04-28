@@ -6,7 +6,7 @@ from datetime import date
 import streamlit as st
 from streamlit.components.v1 import iframe
 
-col1, col2 = st.columns((1,6))
+col1, col2 = st.columns((1,4))
 
 col1.image("vit_3.png", use_column_width='auto')
 
