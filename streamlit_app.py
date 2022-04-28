@@ -26,9 +26,9 @@ template = env.get_template("template.html")
 left.markdown("**Fill Required Data**")
 form = left.form("Employee_Form")
 emp_ID = form.text_input("Employee ID")
+salutation = form.selectbox("Salutation", ["Dr.", "Mr.", "Ms.", "Mrs."], index=0,)
 emp_Name = form.text_input("Employee Name")
-course = form.selectbox("Choose Course", ["Python", "Java", "Big Data", "Deep Learning"], index=0,)
-grade = form.slider("Grade", 1, 100, 50)
+school = form.text_input("School")
 submit = form.form_submit_button(" Generate Order")
 
 if submit:
