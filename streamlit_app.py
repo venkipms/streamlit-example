@@ -24,11 +24,12 @@ env = Environment(loader=FileSystemLoader("."), autoescape = select_autoescape()
 template = env.get_template("template.html")
 
 left.markdown("**Fill Required Data**")
-form = left.form("Template_Form")
-student = form.text_input("Student Name")
+form = left.form("Employee_Form")
+emp_ID = form.text_input("Employee ID")
+emp_Name = form.text_input("Employee Name")
 course = form.selectbox("Choose Course", ["Python", "Java", "Big Data", "Deep Learning"], index=0,)
 grade = form.slider("Grade", 1, 100, 50)
-submit = form.form_submit_button(" 🎓 Generate Certificate")
+submit = form.form_submit_button(" Generate Order")
 
 if submit:
     html = template.render(student=student, course=course, grade=f"{grade}/100", date=date.today().strftime("%B %d,%Y"),)
